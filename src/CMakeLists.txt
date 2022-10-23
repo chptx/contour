@@ -3,6 +3,9 @@ if(("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU") OR ("${CMAKE_CXX_COMPILER_ID}" MAT
 endif()
 
 include(PedanticCompiler)
+if(MSVC)
+    add_compile_options("/source-charset:utf-8")
+endif()
 
 add_subdirectory(crispy)
 add_subdirectory(text_shaper)
